@@ -1,6 +1,21 @@
-bgColor = #ffeac9
+$primary = #f7eee5
+bgColor = #ffffff
 textColor = #262626
+
+@import "../../node_modules/bulma-stylus/bulma"
 
 body
 	background bgColor
 	color textColor
+
+	#main-banner
+		height 100vh
+		background-image url("beach.jpg")
+		background-size cover
+		background-repeat no-repeat
+
+		*
+			color textColor
+
+		h1
+			font-weight bold

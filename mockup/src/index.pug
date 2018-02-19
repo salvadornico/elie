@@ -1,9 +1,29 @@
 html(lang="en")
 	head
 		meta(charset="UTF-8")
-		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(name="viewport", content="width=device-width, initial-scale=1")
 		meta(http-equiv="X-UA-Compatible", content="ie=edge")
 		link(rel="stylesheet", href="styles.styl")
-		title Document
+		script(defer, src="https://use.fontawesome.com/releases/v5.0.0/js/all.js")
+		title Elie's Blog
 	body
-		h1 Hello World
+		section#main-banner.hero.is-primary.has-text-centered
+			.hero-body
+				.container
+					.level
+						h1.title.level-item.has-text-centered ELIE'S BLOG
+					.level
+						h2.subtitle.level-item.has-text-centered Primary subtitle
+
+					.level
+						a.level-item(href="#") COLLECTION
+						a.level-item(href="#") OUR STORY
+						a.level-item(href="#") BLOG
+						a.level-item(href="#") CONTACT
+
+					.level
+						button.level-item.button.is-outlined.is-inverted.is-primary HELLO
+
+		.container
+			.block
+				h1 Hello World
