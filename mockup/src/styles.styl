@@ -10,6 +10,27 @@ textColor = #262626
 	background bgColor
 	color textColor
 
+	#main-banner
+		height 100vh
+		background-image url("beach.jpg")
+		background-size cover
+		background-repeat no-repeat
+
+		*
+			color textColor
+			text-align center
+
+		h1.title
+			font-weight bold
+
+		.hero-body > .columns > .column
+			display grid
+			grid-template-rows 1fr 1fr 1fr
+
+			@media DesktopOnly
+				grid-template-rows 1fr 1fr 4fr
+				max-width 50rem
+
 	section.section
 		& > .column
 			@media DesktopOnly
@@ -21,23 +42,6 @@ textColor = #262626
 	button
 		max-width 15rem
 		border 0.1rem solid textColor
-
-	#main-banner
-		height 100vh
-		background-image url("beach.jpg")
-		background-size cover
-		background-repeat no-repeat
-
-		*
-			color textColor
-
-		h1.title
-			font-weight bold
-
-		.hero-body
-			max-width 30rem
-			display grid
-			grid-template-rows 1fr 1fr 4fr
 
 	#about-me
 		background accentColor
