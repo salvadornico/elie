@@ -18,8 +18,22 @@ html(lang="en")
 						a.column(href="#") BLOG
 						a.column(href="#") CONTACT
 				.level.columns.is-centered
-					button.column.button.is-outlined.is-inverted.is-primary HELLO
+					button.column.button.is-outlined.is-inverted.is-primary HELLO 👋
 
-		.container
-			.block
-				h1 Hello World
+		section.section#gallery.columns.is-centered
+			.column
+				.block
+					h1.title Crafted for Creatives
+					h2.subtitle Pictures go down there 👇
+				.block
+					.tile.is-ancestor
+						img.tile.is-4.is-parent(src="beach.jpg")
+						.tile.is-4.is-parent.is-vertical
+							img.tile.is-child(src="beach.jpg")
+							img.tile.is-child(src="beach.jpg")
+						img.tile.is-4.is-parent(src="beach.jpg")
+
+		section.section#our-story.columns.is-centered
+			.column.block
+				h1.title Our story
+				p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum molestias dolorum ipsum voluptatem, officia temporibus animi qui quam consequatur. Deserunt enim, recusandae suscipit distinctio sed nemo? Eligendi cumque provident ullam.

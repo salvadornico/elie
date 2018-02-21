@@ -1,5 +1,6 @@
 $primary = #f7eee5
 bgColor = #ffffff
+accentColor = #f0f6f6
 textColor = #262626
 
 @import "../../node_modules/bulma-stylus/bulma"
@@ -7,6 +8,10 @@ textColor = #262626
 body
 	background bgColor
 	color textColor
+
+	section.section *
+		max-width 50rem
+		text-align center
 
 	#main-banner
 		height 100vh
@@ -28,3 +33,6 @@ body
 			button
 				max-width 15rem
 				border 0.1rem solid textColor
+
+	#our-story
+		background accentColor
