@@ -5,13 +5,18 @@ textColor = #262626
 
 @import "../../node_modules/bulma-stylus/bulma"
 
-body
+#body
 	background bgColor
 	color textColor
 
-	section.section *
-		max-width 50rem
-		text-align center
+	section.section
+		*
+			max-width 50rem
+			text-align center
+
+	button
+		max-width 15rem
+		border 0.1rem solid textColor
 
 	#main-banner
 		height 100vh
@@ -22,17 +27,19 @@ body
 		*
 			color textColor
 
+		h1.title
+			font-weight bold
+
 		.hero-body
 			max-width 30rem
 			display grid
 			grid-template-rows 1fr 1fr 4fr
 
-			h1
-				font-weight bold
-
-			button
-				max-width 15rem
-				border 0.1rem solid textColor
-
 	#our-story
 		background accentColor
+
+	#blog-link
+		height 40vh
+		background-image url("beach.jpg")
+		background-size cover
+		background-repeat no-repeat
