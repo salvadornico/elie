@@ -11,10 +11,11 @@ textColor = #262626
 	color textColor
 
 	section.section
-		margin-bottom 0
+		& > .column
+			@media DesktopOnly
+				margin auto 20rem 0 20rem
 
 		*
-			max-width 50rem
 			text-align center
 
 	button

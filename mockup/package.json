@@ -8,7 +8,7 @@
 		"parcel": "parcel src/index.pug",
 		"browser-sync":
 			"browser-sync start --proxy \"localhost:1234\" --files 'src' --no-open",
-		"build": "parcel build src/index.pug --public-url ./"
+		"build": "parcel build src/index.pug --out-dir output --public-url ./"
 	},
 	"devDependencies": {
 		"browser-sync": "^2.23.5",
