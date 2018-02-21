@@ -4,12 +4,15 @@ accentColor = #f0f6f6
 textColor = #262626
 
 @import "../../node_modules/bulma-stylus/bulma"
+@import "_base"
 
 #body
 	background bgColor
 	color textColor
 
 	section.section
+		margin-bottom 0
+
 		*
 			max-width 50rem
 			text-align center
@@ -35,15 +38,7 @@ textColor = #262626
 			display grid
 			grid-template-rows 1fr 1fr 4fr
 
-	#our-story
+	#about-me
 		background accentColor
-
-	#blog-link
-		height 60vh
-		background-image url("beach.jpg")
-		background-size cover
-		background-repeat no-repeat
-
-		button
-			max-width 15rem
-			color textColor
+		text-align center
+		position relative
