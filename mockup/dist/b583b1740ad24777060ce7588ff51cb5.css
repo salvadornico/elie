@@ -5234,8 +5234,12 @@ label.panel-block:hover {
   background: #f0f6f6;
 }
 #body #blog-link {
-  height: 40vh;
+  height: 60vh;
   background-image: url("aa2d169dcaf790c301d4817cc59bd272.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+}
+#body #blog-link button {
+  max-width: 15rem;
+  color: #262626;
 }
