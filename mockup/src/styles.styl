@@ -23,13 +23,23 @@ textColor = #262626
 		h1.title
 			font-weight bold
 
-		.hero-body > .columns > .column
-			display grid
-			grid-template-rows 1fr 1fr 1fr
+		.hero-body > .columns
+			height 100%
 
-			@media DesktopOnly
-				grid-template-rows 1fr 1fr 4fr
-				max-width 50rem
+			& > .column
+				position relative
+				display grid
+				grid-template-rows 1fr 1fr 1fr
+
+				@media DesktopOnly
+					grid-template-rows 1fr 1fr 4fr
+					max-width 50rem
+
+				& > *
+					align-self center
+
+				button
+					center X relative
 
 	section.section
 		& > .column
