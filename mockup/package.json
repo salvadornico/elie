@@ -7,7 +7,8 @@
 		"start": "npm-run-all --parallel parcel browser-sync",
 		"parcel": "parcel src/index.pug",
 		"browser-sync":
-			"browser-sync start --proxy \"localhost:1234\" --files 'src' --no-open"
+			"browser-sync start --proxy \"localhost:1234\" --files 'src' --no-open",
+		"build": "parcel build src/index.pug --public-url ./"
 	},
 	"devDependencies": {
 		"browser-sync": "^2.23.5",
