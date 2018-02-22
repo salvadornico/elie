@@ -6,8 +6,8 @@
 				.column
 					h1.title ELIE'S BLOG
 					.columns.is-centered
-						a.column(href="#") PORTFOLIO
-						a.column(href="#") ABOUT ME
+						a.column(href="#", v-scroll-to="'#gallery'") PORTFOLIO
+						a.column(href="#", v-scroll-to="'#about-me'") ABOUT ME
 						a.column(href="#") BLOG
 						a.column(href="#") CONTACT
 					button.button.is-outlined.is-inverted.is-primary HELLO 👋

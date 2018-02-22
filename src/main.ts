@@ -4,6 +4,9 @@ import router from "./router"
 import store from "./store"
 import fontawesome from "@fortawesome/fontawesome"
 import brands from "@fortawesome/fontawesome-free-brands"
+import VueScrollTo from "vue-scrollto"
+
+Vue.use(VueScrollTo)
 
 fontawesome.library.add(brands)
 
