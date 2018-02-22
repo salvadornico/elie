@@ -1,0 +1,59 @@
+$primary = #f7eee5
+bgColor = #ffffff
+accentColor = #f0f6f6
+textColor = #262626
+
+@import "../../node_modules/bulma-stylus/bulma"
+@import "_base"
+
+#body
+	background bgColor
+	color textColor
+
+	#main-banner
+		height 100vh
+		background-image url("beach.jpg")
+		background-size cover
+		background-repeat no-repeat
+
+		*
+			color textColor
+			text-align center
+
+		h1.title
+			font-weight bold
+
+		.hero-body > .columns
+			height 100%
+
+			& > .column
+				position relative
+				display grid
+				grid-template-rows 1fr 1fr 1fr
+
+				@media DesktopOnly
+					grid-template-rows 1fr 1fr 4fr
+					max-width 50rem
+
+				& > *
+					align-self center
+
+				button
+					center X relative
+
+	section.section
+		& > .column
+			@media DesktopOnly
+				margin auto 20rem 0 20rem
+
+		*
+			text-align center
+
+	button
+		max-width 15rem
+		border 0.1rem solid textColor
+
+	#about-me
+		background accentColor
+		text-align center
+		position relative
