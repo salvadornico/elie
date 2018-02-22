@@ -554,10 +554,6 @@
   version "0.0.22"
   resolved "https://registry.yarnpkg.com/@fortawesome/vue-fontawesome/-/vue-fontawesome-0.0.22.tgz#720457bda0e5866265e5e0f8fe4fbd857fa5653f"
 
-"@types/@fortawesome/vue-fontawesome":
-  version "0.0.22"
-  resolved "https://codeload.github.com/fortawesome/vue-fontawesome/tar.gz/e23081c9a61a19f0d04f5d0c8e0166d9d865c9fb"
-
 "@types/babel-types@*", "@types/babel-types@^7.0.0":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@types/babel-types/-/babel-types-7.0.0.tgz#4beb190e239fe05bac5e57e8d8376cab4f20c65c"
@@ -2013,6 +2009,10 @@ deep-extend@~0.4.0:
 deepmerge@^1.5.2:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-1.5.2.tgz#10499d868844cdad4fee0842df8c7f6f0c95a753"
+
+deepmerge@^2.0.0:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-2.0.1.tgz#25c1c24f110fb914f80001b925264dd77f3f4312"
 
 define-properties@^1.1.2:
   version "1.1.2"
@@ -3730,6 +3730,10 @@ lodash.endswith@^4.2.1:
 lodash.isfunction@^3.0.8:
   version "3.0.9"
   resolved "https://registry.yarnpkg.com/lodash.isfunction/-/lodash.isfunction-3.0.9.tgz#06de25df4db327ac931981d1bdb067e5af68d051"
+
+lodash.isplainobject@^4.0.6:
+  version "4.0.6"
+  resolved "https://registry.yarnpkg.com/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz#7c526a52d89b45c45cc690b88163be0497f550cb"
 
 lodash.isstring@^4.0.1:
   version "4.0.1"
@@ -6594,6 +6598,14 @@ vue-loader@^14.1.1:
     vue-hot-reload-api "^2.2.0"
     vue-style-loader "^4.0.1"
     vue-template-es2015-compiler "^1.6.0"
+
+vue-meta@^1.4.3:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/vue-meta/-/vue-meta-1.4.3.tgz#ad0e618c0152617ec7497d9edb117e1a9d70cfc9"
+  dependencies:
+    deepmerge "^2.0.0"
+    lodash.isplainobject "^4.0.6"
+    object-assign "^4.1.1"
 
 vue-parser@^1.1.5:
   version "1.1.6"

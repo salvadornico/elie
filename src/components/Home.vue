@@ -37,6 +37,11 @@ import AboutMe from "@/components/AboutMe.vue"
 	components: {
 		AboutMe,
 	},
+	metaInfo() {
+       return {
+          title: "Name of Blog here"
+      }
+   }
 })
 export default class Home extends Vue {}
 </script>
