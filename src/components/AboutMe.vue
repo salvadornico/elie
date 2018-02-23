@@ -6,7 +6,7 @@ section.section#about-me.columns.is-centered
 				h1.title ABOUT ME
 		.level
 			p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum molestias dolorum ipsum voluptatem, officia temporibus animi qui quam consequatur. Deserunt enim, recusandae suscipit distinctio sed nemo? Eligendi cumque provident ullam.
-		.level.columns.is-centered
+		.level.columns.is-centered#contact
 			.column.buttons
 				template(v-for="link in links")
 					a.button(:href="link.url", target="_blank")

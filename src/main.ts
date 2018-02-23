@@ -6,7 +6,7 @@ import VueScrollTo from "vue-scrollto"
 import Buefy from "buefy"
 
 Vue.use(Buefy, {
-    defaultIconPack: 'fas',
+	defaultIconPack: "fas",
 })
 Vue.use(VueScrollTo)
 

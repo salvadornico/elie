@@ -6,10 +6,10 @@
 				.column
 					h1.title ELIE'S BLOG
 					.columns.is-centered
-						a.column(v-scroll-to="'#about-me'") ABOUT ME
 						a.column(v-scroll-to="'#gallery'") WORK
+						a.column(v-scroll-to="'#about-me'") ABOUT ME
+						a.column(v-scroll-to="'#contact'") CONTACT
 						a.column BLOG
-						a.column CONTACT
 					button.button.is-outlined.is-inverted.is-primary HELLO 👋
 
 	section.section#gallery.columns.is-centered
