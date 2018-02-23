@@ -6,14 +6,14 @@
 				.column
 					h1.title ELIE'S BLOG
 					.columns.is-centered
-						a.column(href="#", v-scroll-to="'#gallery'") PORTFOLIO
-						a.column(href="#", v-scroll-to="'#about-me'") ABOUT ME
-						a.column(href="#") BLOG
-						a.column(href="#") CONTACT
+						a.column(v-scroll-to="'#about-me'") ABOUT ME
+						a.column(v-scroll-to="'#gallery'") WORK
+						a.column BLOG
+						a.column CONTACT
 					button.button.is-outlined.is-inverted.is-primary HELLO 👋
 
 	section.section#gallery.columns.is-centered
-		.column
+		.column.is-three-quarters
 			.block
 				h1.title Crafted for Creatives
 				h2.subtitle Pictures go down there 👇
@@ -84,13 +84,8 @@ export default class Home extends Vue {}
 				button
 					center X relative
 
-	section.section
-		& > .column
-			@media DesktopOnly
-				margin auto 20rem 0 20rem
-
-		*
-			text-align center
+	section.section	*
+		text-align center
 
 	button
 		max-width 15rem

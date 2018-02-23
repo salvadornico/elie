@@ -3,5 +3,5 @@ declare module "*.vue" {
 	export default Vue
 }
 
-declare module "@fortawesome/*"
+declare module "buefy"
 declare module "vue-scrollto"
