@@ -1,5 +1,5 @@
 <template lang="pug">
-section.section#about-me.columns.is-centered
+section#about-me.section.columns.is-centered
 	.column.is-three-quarters
 		.level.columns.is-centered
 			.column
