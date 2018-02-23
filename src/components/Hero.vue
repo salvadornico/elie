@@ -1,11 +1,11 @@
 <template lang="pug">
 section#hero.hero.is-primary
-		.hero-body
-			h1.title ELIE'S BLOG
-			h2.subtitle Something witty
-		.hero-foot.columns.is-centered
-			.column(v-for="button in buttons")
-				a.button.is-text(:href="button.link", v-scroll-to="getScrollLink(button.scrollTo)") {{ button.text }}
+	.hero-body
+		h1.title ELIE'S BLOG
+		h2.subtitle Something witty
+	.hero-foot.columns.is-centered
+		.column(v-for="button in buttons")
+			a.button.is-text(:href="button.link", v-scroll-to="getScrollLink(button.scrollTo)") {{ button.text }}
 </template>
 
 <script lang="ts">

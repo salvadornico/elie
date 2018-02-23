@@ -32,7 +32,7 @@ export default class AboutMe extends Vue {
 @require "../assets/_base"
 
 #about-me
-		background accentColor
-		text-align center
-		position relative
+	background accentColor
+	text-align center
+	position relative
 </style>
