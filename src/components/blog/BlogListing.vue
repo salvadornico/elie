@@ -7,6 +7,13 @@
 import Vue from "vue"
 import { Component } from "vue-property-decorator"
 
-@Component
+@Component({
+	components: {},
+	metaInfo() {
+       return {
+          title: "Blog"
+      }
+   }
+})
 export default class BlogListing extends Vue {}
 </script>
