@@ -5,7 +5,9 @@ section#hero.hero.is-primary
 		h2.subtitle Something witty
 	.hero-foot.columns.is-centered
 		.column(v-for="button in buttons")
-			a.button.is-text(:href="button.link", v-scroll-to="getScrollLink(button.scrollTo)") {{ button.text }}
+			a.button.is-text(v-scroll-to="getScrollLink(button.scrollTo)") {{ button.text }}
+		.column
+			router-link.button.is-text(to="blog") BLOG
 </template>
 
 <script lang="ts">
@@ -18,7 +20,6 @@ export default class Hero extends Vue {
 		{ scrollTo: "gallery", text: "WORK" },
 		{ scrollTo: "about-me", text: "ABOUT ME" },
 		{ scrollTo: "contact", text: "CONTACT" },
-		{ link: "#", text: "BLOG" },
 	]
 
 	getScrollLink(id: string): string { return `#${id}`}
