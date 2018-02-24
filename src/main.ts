@@ -15,10 +15,14 @@ const apolloClient = new ApolloClient({
 	cache: new InMemoryCache(),
 })
 Vue.use(VueApollo)
+const apolloProvider = new VueApollo({
+	defaultClient: apolloClient,
+})
 
 Vue.use(Buefy, {
 	defaultIconPack: "fas",
 })
+
 Vue.use(VueScrollTo)
 
 Vue.config.productionTip = false
@@ -26,5 +30,6 @@ Vue.config.productionTip = false
 new Vue({
 	router,
 	store,
+	apolloProvider,
 	render: h => h(App),
 }).$mount("#app")
