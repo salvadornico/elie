@@ -20,7 +20,7 @@ import { mapActions, mapGetters } from "vuex"
 	methods: { ...mapActions(["getPosts"]) },
 })
 export default class Blog extends Vue {
-	created () {
+	created() {
 		this.getPosts()
 	}
 }

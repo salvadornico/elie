@@ -9,4 +9,12 @@ export namespace Queries {
 			}
 		}
 	`
+
+	export const getPost = (id: string) => gql`
+		{
+			Post(id: ${id}) {
+				content
+			}
+		}
+	`
 }
