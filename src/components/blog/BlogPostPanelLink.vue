@@ -1,9 +1,11 @@
 <template lang="pug">
 section.section.blog-post-link
-	figure.image.is-2by1(v-if="post.coverImage")
-		img(:src="post.coverImage.url", :alt="post.title")
-	h1.title {{ post.title }}
-	h2.subtitle {{ formattedDate }}
+	.box
+		figure.image.is-2by1(v-if="post.coverImage")
+			img(:src="post.coverImage.url", :alt="post.title")
+		.level
+			h1.title {{ post.title }}
+			h2.subtitle {{ formattedDate }}
 </template>
 
 <script lang="ts">

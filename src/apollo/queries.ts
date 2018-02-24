@@ -4,7 +4,7 @@ export namespace Queries {
 	export const allPosts = gql`
 		{
 			allPosts(orderBy: dateAndTime_DESC) {
-				id
+				slug
 				title
 				dateAndTime
 				coverImage {

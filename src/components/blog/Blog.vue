@@ -1,16 +1,20 @@
 <template lang="pug">
 #blog
-	nav.navbar(role="navigation")
+	nav.navbar.is-primary(role="navigation")
 		.navbar-brand
 			router-link.navbar-item(to="/")
 				h1.title Elie's Blog
 
-	.container.columns.is-desktop
-		.column.is-four-fifths
-			template(v-for="post in posts")
-				BlogPostPanelLink(:post="post")
+	.container
+		.columns.is-desktop
+			.column.is-three-fourths
+				template(v-for="post in posts")
+					BlogPostPanelLink(:post="post")
 
-		.column
+			.column.is-one-quarter
+				section.section
+					.box
+						p Put highlights here?
 </template>
 
 <script lang="ts">
@@ -43,7 +47,6 @@ export default class Blog extends Vue {
 
 #blog
 	.navbar
-		background highlightColor
 		padding-top 0.5rem
 		padding-bottom 0.5rem
 </style>
