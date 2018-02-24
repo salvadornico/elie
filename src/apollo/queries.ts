@@ -3,10 +3,13 @@ import gql from "graphql-tag"
 export namespace Queries {
 	export const allPosts = gql`
 		{
-			allPosts {
+			allPosts(orderBy: dateAndTime_DESC) {
 				id
 				title
 				dateAndTime
+				coverImage {
+					url
+				}
 			}
 		}
 	`
