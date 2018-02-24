@@ -1,11 +1,13 @@
 <template lang="pug">
 #app
 	router-view
+	b-loading(:active.sync="isLoading", :canCancel="true")
 </template>
 
 <script lang="ts">
 import Vue from "vue"
 import { Component } from "vue-property-decorator"
+import { mapGetters } from "vuex";
 
 @Component({
 	metaInfo() {
@@ -15,7 +17,8 @@ import { Component } from "vue-property-decorator"
       		// 	{ innerHTML: "// Script goes here", src: "fileUrl" }
     		// ],
 		}
-	}
+	},
+	computed: { ...mapGetters(["isLoading"]) },
 })
 export default class App extends Vue {}
 </script>

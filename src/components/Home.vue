@@ -31,9 +31,6 @@ export default class Home extends Vue {}
 @require "../assets/_base"
 
 #home
-	background bgColor
-	color textColor
-
 	section.section	*
 		text-align center
 </style>

@@ -6,6 +6,7 @@ export namespace Queries {
 			allPosts {
 				id
 				title
+				dateAndTime
 			}
 		}
 	`
