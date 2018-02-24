@@ -2,6 +2,7 @@ import Vue from "vue"
 import Vuex from "vuex"
 import apolloClient from "./apollo"
 import gql from "graphql-tag"
+// import postQuery from "./queries/allPosts.gql"
 
 Vue.use(Vuex)
 
@@ -17,14 +18,6 @@ export default new Vuex.Store({
 			state.posts = posts
 		},
 		SET_POSTS(state, posts) {
-			console.log(posts)
-			// having an object instead of an array makes the other methods easier
-			// since we can use Vue.set() and Vue.delete()
-			// const array = []
-
-			// posts.map((post: { id: number }) => {
-			// 	object[post.id] = post
-			// })
 			state.posts = posts
 		},
 	},

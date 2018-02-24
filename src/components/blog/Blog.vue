@@ -1,6 +1,8 @@
 <template lang="pug">
 #blog
 	h1 This is a blog
+	ul
+		li(v-for="post in posts") {{ post.title }}
 </template>
 
 <script lang="ts">
@@ -11,7 +13,7 @@ import { Component } from "vue-property-decorator"
 @Component
 export default class Blog extends Vue {
 	get posts() {
-		return this.$store.state.fruits;
+		return this.$store.getters.posts
 	}
 
 	created () {
