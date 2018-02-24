@@ -1,7 +1,8 @@
 import Vue from "vue"
 import Vuex from "vuex"
-import apolloClient from "./apollo"
-import gql from "graphql-tag"
+import apolloClient from "./apollo/index"
+import { Queries } from "@/apollo/queries"
+// import gql from "graphql-tag"
 
 Vue.use(Vuex)
 
@@ -21,22 +22,9 @@ export default new Vuex.Store({
 		},
 	},
 	actions: {
-		getPosts(context) {
-			console.log("hello")
-			apolloClient
-				.query({
-					query: gql`
-						{
-							allPosts {
-								id
-								title
-							}
-						}
-					`,
-				})
-				.then(result => {
-					context.commit("SET_POSTS", result.data.allPosts)
-				})
+		async getPosts(context) {
+			const result = await apolloClient.query({ query: Queries.allPosts })
+			context.commit("SET_POSTS", (result.data as any).allPosts)
 		},
 	},
 })

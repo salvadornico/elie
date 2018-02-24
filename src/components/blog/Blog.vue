@@ -1,6 +1,6 @@
 <template lang="pug">
 #blog
-	h1 This is a blog
+	h1.title This is a blog
 	ul
 		li(v-for="post in posts") {{ post.title }}
 </template>
