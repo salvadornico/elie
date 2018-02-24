@@ -2,7 +2,6 @@ import Vue from "vue"
 import Vuex from "vuex"
 import apolloClient from "./apollo"
 import gql from "graphql-tag"
-// import postQuery from "./queries/allPosts.gql"
 
 Vue.use(Vuex)
 

@@ -19,10 +19,10 @@ import Hero from "@/components/Hero.vue"
 		Hero,
 	},
 	metaInfo() {
-       return {
-          title: "Name of Blog here"
-      }
-   }
+		return {
+			title: "Name of Blog here"
+		}
+	}
 })
 export default class Home extends Vue {}
 </script>

@@ -8,16 +8,20 @@
 <script lang="ts">
 import Vue from "vue"
 import { Component } from "vue-property-decorator"
-// import { mapGetters } from "vuex"
+import { mapActions, mapGetters } from "vuex"
 
-@Component
+@Component({
+	metaInfo() {
+		return {
+			title: "Blog"
+		}
+	},
+	computed: { ...mapGetters(["posts"]) },
+	methods: { ...mapActions(["getPosts"]) },
+})
 export default class Blog extends Vue {
-	get posts() {
-		return this.$store.getters.posts
-	}
-
 	created () {
-		this.$store.dispatch('getPosts');
+		this.getPosts()
 	}
 }
 </script>
