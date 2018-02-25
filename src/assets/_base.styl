@@ -9,6 +9,8 @@ TabletDown = "(max-width: 1024px)"
 TabletOnly = "(min-width: 769px) and (max-width: 1024px)"
 DesktopOnly = "(min-width: 1024px)"
 
+@import url("https://fonts.googleapis.com/css?family=Inconsolata|Playfair+Display|Open+Sans+Condensed:300")
+
 center(axis, position)
 	position position
 
@@ -31,3 +33,13 @@ center(axis, position)
 body
 	background bgColor
 	color textColor
+
+	*
+		font-family "Inconsolata"
+
+	.title, .main-link
+		font-family "Open Sans Condensed"
+		letter-spacing 2px
+
+	.main-link
+		font-weight bold

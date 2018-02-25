@@ -5,9 +5,9 @@ section#hero.hero.is-primary
 		h2.subtitle Something witty
 	.hero-foot.columns.is-centered
 		.column(v-for="button in buttons")
-			a.button.is-text(v-scroll-to="getScrollLink(button.scrollTo)") {{ button.text }}
+			a.button.is-text.main-link(v-scroll-to="getScrollLink(button.scrollTo)") {{ button.text }}
 		.column
-			router-link.button.is-text(to="blog") BLOG
+			router-link.button.is-text.main-link(to="blog") BLOG
 </template>
 
 <script lang="ts">

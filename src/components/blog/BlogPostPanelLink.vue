@@ -33,9 +33,12 @@ export default class BlogPostPanelLink extends Vue {
 	text-align center
 
 	h1.title
-		text-decoration underline
 		margin-bottom 2rem
 
 	figure
 		margin-bottom 1rem
+
+	// Use for main article text
+	// p
+	// 	font-family "Playfair Display"
 </style>
