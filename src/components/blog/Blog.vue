@@ -12,8 +12,7 @@
 
 			.column.is-one-quarter
 				section.section
-					.box
-						p Put highlights here?
+					FeaturedPosts(:posts="featuredPosts")
 </template>
 
 <script lang="ts">
@@ -21,6 +20,7 @@ import Vue from "vue"
 import { Component } from "vue-property-decorator"
 import { mapActions, mapGetters } from "vuex"
 import BlogPostPanelLink from "./BlogPostPanelLink.vue"
+import FeaturedPosts from "./FeaturedPosts.vue"
 
 @Component({
 	metaInfo() {
@@ -30,6 +30,7 @@ import BlogPostPanelLink from "./BlogPostPanelLink.vue"
 	},
 	components: {
 		BlogPostPanelLink,
+		FeaturedPosts,
 	},
 	computed: { ...mapGetters(["posts", "isLoading"]) },
 	methods: { ...mapActions(["getPosts"]) },
@@ -37,6 +38,10 @@ import BlogPostPanelLink from "./BlogPostPanelLink.vue"
 export default class Blog extends Vue {
 	async created() {
 		this.getPosts()
+	}
+
+	get featuredPosts() {
+		return this.posts.filter(post => post.featured)
 	}
 }
 </script>

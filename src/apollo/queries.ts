@@ -23,6 +23,7 @@ export namespace Queries {
 				slug
 				title
 				createdAt
+				featured
 				coverImage {
 					url
 				}
