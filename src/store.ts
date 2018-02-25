@@ -28,12 +28,16 @@ export default new Vuex.Store({
 	actions: {
 		async getPosts(context) {
 			context.commit("START_LOADING")
-			const result = await apolloClient.query({ query: Queries.allPosts })
+			const result = await apolloClient
+				.query({ query: Queries.allPosts })
+				.then(result => {
+					context.commit("SET_POSTS", (result.data as any).allPosts)
+				})
+				.catch(err => {
+					console.log(err)
+				})
 
-			if (result) {
-				context.commit("SET_POSTS", (result.data as any).allPosts)
-				context.commit("STOP_LOADING")
-			}
+			context.commit("STOP_LOADING")
 		},
 	},
 })

@@ -8,8 +8,13 @@
 	.container
 		.columns.is-desktop
 			.column.is-three-fourths
-				template(v-for="post in posts")
+				template(v-for="post in posts", v-if="posts.length > 0")
 					BlogPostPanelLink(:post="post")
+				section.section(v-if="noPosts")
+					b-message(title="Error", type="is-warning", :active.sync="noPosts")
+						p No posts found, please try refreshing this page.
+					.box
+						p No posts found.
 
 			.column.is-one-quarter
 				section.section
@@ -32,12 +37,16 @@ import BlogPostPanelLink from "./BlogPostPanelLink.vue"
 	components: {
 		BlogPostPanelLink,
 	},
-	computed: { ...mapGetters(["posts"]) },
+	computed: { ...mapGetters(["posts", "isLoading"]) },
 	methods: { ...mapActions(["getPosts"]) },
 })
 export default class Blog extends Vue {
 	async created() {
 		this.getPosts()
+	}
+
+	get noPosts() {
+		return !this.isLoading && this.posts.length == 0
 	}
 }
 </script>

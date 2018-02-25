@@ -3,10 +3,10 @@ import gql from "graphql-tag"
 export namespace Queries {
 	export const allPosts = gql`
 		{
-			allPosts(orderBy: dateAndTime_DESC) {
+			allPosts(orderBy: dateAndTime_ASC) {
 				slug
 				title
-				dateAndTime
+				createdAt
 				coverImage {
 					url
 				}
