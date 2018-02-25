@@ -7,7 +7,9 @@
 
 	.container
 		.columns.is-desktop
-			router-view
+			.column.is-three-fourths
+				router-view
+
 			.column.is-one-quarter
 				section.section
 					.box
@@ -35,10 +37,6 @@ import BlogPostPanelLink from "./BlogPostPanelLink.vue"
 export default class Blog extends Vue {
 	async created() {
 		this.getPosts()
-	}
-
-	get noPosts() {
-		return !this.isLoading && this.posts.length == 0
 	}
 }
 </script>

@@ -1,7 +1,7 @@
 import gql from "graphql-tag"
 
 export namespace Queries {
-	export const allPosts = gql`
+	export const getPosts = () => gql`
 		{
 			allPosts(orderBy: dateAndTime_ASC) {
 				slug

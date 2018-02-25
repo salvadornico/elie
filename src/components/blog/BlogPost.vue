@@ -1,12 +1,14 @@
 <template lang="pug">
 .blog-post
-	section.section
-		figure.image.is-2by1(v-if="currentPost.coverImage")
-			img(:src="currentPost.coverImage.url", :alt="currentPost.title")
-		h1.title {{ currentPost.title }}
+	section.section(v-if="post.coverImage")
+		figure.image.is-2by1
+			img(:src="post.coverImage.url", :alt="post.title")
+		span {{ post.coverImage.caption }}
+	section.hero(:class="{ section: !post.coverImage }")
+		h1.title {{ post.title }}
 		h2.subtitle {{ formattedDate }}
 	section.section.post-content
-		vue-markdown(:source="currentPost.content")
+		vue-markdown(:source="post.content")
 	section.section
 		router-link.button(to="blog") Back to Blog
 </template>
@@ -16,13 +18,18 @@ import Vue from "vue"
 import { Component } from "vue-property-decorator"
 import VueMarkdown from "vue-markdown"
 import { mapActions, mapGetters } from "vuex"
-import * as moment from "moment"
+import { formatDate } from "@/utils/misc"
 
 @Component({
+	metaInfo() {
+		return {
+			title: this.post.title
+		}
+	},
 	components: {
 		VueMarkdown,
 	},
-	computed: { ...mapGetters(["currentPost", "isLoading"]) },
+	computed: { ...mapGetters(["post", "isLoading"]) },
 	methods: { ...mapActions(["getSinglePost"]) },
 })
 export default class BlogPost extends Vue {
@@ -35,7 +42,7 @@ export default class BlogPost extends Vue {
 	}
 
 	get formattedDate() {
-		return moment(this.currentPost.createdAt).format("D MMM YYYY")
+		return formatDate(this.post.createdAt)
 	}
 }
 </script>
@@ -46,12 +53,18 @@ export default class BlogPost extends Vue {
 .blog-post
 	text-align center
 
-	h1.title
-		margin-bottom 2rem
-
 	figure
 		margin-bottom 1rem
 
+	.hero.section
+		padding-bottom 0
+
+	h1.title
+		margin-bottom 2rem
+
 	.post-content
 		text-align left
+
+		img
+			width 100%
 </style>

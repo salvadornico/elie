@@ -1,5 +1,5 @@
 <template lang="pug">
-.column.is-three-fourths
+.blog-listing
 	template(v-for="post in posts", v-if="posts.length > 0")
 		BlogPostPanelLink(:post="post")
 	section.section(v-if="noPosts")
@@ -33,7 +33,7 @@ export default class BlogListing extends Vue {
 	}
 
 	get noPosts() {
-		return !this.isLoading && this.posts.length == 0
+		return !this.isLoading && this.posts.length === 0
 	}
 }
 </script>

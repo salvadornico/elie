@@ -2,7 +2,6 @@ import Vue from "vue"
 import Vuex from "vuex"
 import apolloClient from "./apollo/index"
 import { Queries } from "@/apollo/queries"
-import { currentId } from "async_hooks"
 
 Vue.use(Vuex)
 
@@ -10,12 +9,12 @@ export default new Vuex.Store({
 	state: {
 		isLoading: false,
 		posts: [],
-		currentPost: {},
+		post: {},
 	},
 	getters: {
 		isLoading: state => state.isLoading,
 		posts: state => state.posts,
-		currentPost: state => state.currentPost,
+		post: state => state.post,
 	},
 	mutations: {
 		START_LOADING(state) {
@@ -28,14 +27,14 @@ export default new Vuex.Store({
 			state.posts = posts
 		},
 		SET_CURRENT_POST(state, post) {
-			state.currentPost = post
+			state.post = post
 		},
 	},
 	actions: {
-		async getPosts(context) {
+		async getPosts(context, payload = null) {
 			context.commit("START_LOADING")
-			const result = await apolloClient
-				.query({ query: Queries.allPosts })
+			await apolloClient
+				.query({ query: Queries.getPosts() })
 				.then(result => {
 					context.commit("SET_POSTS", (result.data as any).allPosts)
 				})
@@ -47,7 +46,7 @@ export default new Vuex.Store({
 		},
 		async getSinglePost(context, payload: string) {
 			context.commit("START_LOADING")
-			const result = await apolloClient
+			await apolloClient
 				.query({ query: Queries.getPost(payload) })
 				.then(result => {
 					context.commit(
