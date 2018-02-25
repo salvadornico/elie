@@ -31,10 +31,10 @@ export default new Vuex.Store({
 		},
 	},
 	actions: {
-		async getPosts(context, payload = null) {
+		async getPosts(context, payload = {}) {
 			context.commit("START_LOADING")
 			await apolloClient
-				.query({ query: Queries.getPosts() })
+				.query({ query: Queries.getPosts(payload) })
 				.then(result => {
 					context.commit("SET_POSTS", (result.data as any).allPosts)
 				})
