@@ -5,3 +5,4 @@ declare module "*.vue" {
 
 declare module "buefy"
 declare module "vue-scrollto"
+declare module "vue-markdown"

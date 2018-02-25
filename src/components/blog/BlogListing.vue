@@ -1,17 +1,12 @@
 <template lang="pug">
-#blog
-	nav.navbar.is-primary(role="navigation")
-		.navbar-brand
-			router-link.navbar-item(to="/")
-				h1.title Elie's Blog
-
-	.container
-		.columns.is-desktop
-			router-view
-			.column.is-one-quarter
-				section.section
-					.box
-						p Put highlights here?
+.column.is-three-fourths
+	template(v-for="post in posts", v-if="posts.length > 0")
+		BlogPostPanelLink(:post="post")
+	section.section(v-if="noPosts")
+		b-message(title="Error", type="is-warning", :active.sync="noPosts")
+			p No posts found, please try refreshing this page.
+		.box
+			p No posts found.
 </template>
 
 <script lang="ts">
@@ -32,7 +27,7 @@ import BlogPostPanelLink from "./BlogPostPanelLink.vue"
 	computed: { ...mapGetters(["posts", "isLoading"]) },
 	methods: { ...mapActions(["getPosts"]) },
 })
-export default class Blog extends Vue {
+export default class BlogListing extends Vue {
 	async created() {
 		this.getPosts()
 	}

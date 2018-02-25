@@ -14,10 +14,16 @@ export namespace Queries {
 		}
 	`
 
-	export const getPost = (id: string) => gql`
+	export const getPost = (slug: string) => gql`
 		{
-			Post(id: ${id}) {
+			Post(slug: ${slug}) {
+				title
+				createdAt
 				content
+				coverImage {
+					url
+					caption
+				}
 			}
 		}
 	`

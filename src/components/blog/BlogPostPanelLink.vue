@@ -6,13 +6,12 @@ section.section.blog-post-link
 		img(:src="post.coverImage.url", :alt="post.title")
 	.columns.is-centered
 		.column.is-narrow
-			button.button Read More
+			router-link.button(:to="postLink") Read More
 </template>
 
 <script lang="ts">
 import Vue from "vue"
 import { Component, Prop } from "vue-property-decorator"
-import { timeSince } from "@/utils/misc"
 import * as moment from "moment"
 
 @Component
@@ -21,6 +20,10 @@ export default class BlogPostPanelLink extends Vue {
 
 	get formattedDate() {
 		return moment(this.post.createdAt).format("D MMM YYYY")
+	}
+
+	get postLink() {
+		return { name: "blog-post", params: { slug: this.post.slug }}
 	}
 }
 </script>
@@ -37,8 +40,4 @@ export default class BlogPostPanelLink extends Vue {
 
 	figure
 		margin-bottom 1rem
-
-	// Use for main article text
-	// p
-	// 	font-family "Playfair Display"
 </style>
