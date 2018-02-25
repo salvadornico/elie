@@ -12,7 +12,10 @@
 
 			.column.is-one-quarter
 				section.section
-					FeaturedPosts(:posts="featuredPosts")
+					.level.columns.is-centered
+						SocialButtons.column
+					.level
+						FeaturedPosts(:posts="featuredPosts")
 </template>
 
 <script lang="ts">
@@ -20,6 +23,7 @@ import Vue from "vue"
 import { Component } from "vue-property-decorator"
 import { mapActions, mapGetters } from "vuex"
 import BlogPostPanelLink from "./BlogPostPanelLink.vue"
+import SocialButtons from "../shared/SocialButtons.vue"
 import FeaturedPosts from "./FeaturedPosts.vue"
 
 @Component({
@@ -30,6 +34,7 @@ import FeaturedPosts from "./FeaturedPosts.vue"
 	},
 	components: {
 		BlogPostPanelLink,
+		SocialButtons,
 		FeaturedPosts,
 	},
 	computed: { ...mapGetters(["posts", "isLoading"]) },

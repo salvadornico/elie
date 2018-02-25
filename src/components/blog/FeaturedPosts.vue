@@ -1,6 +1,6 @@
 <template lang="pug">
 .box
-	h1.title Featured Posts
+	h1.title Featured
 	ul
 		li(v-for="post in posts")
 			router-link.has-text-black(:to="postLink(post)") {{ post.title }}
@@ -20,6 +20,7 @@ export default class FeaturedPosts extends Vue {
 }
 </script>
 
-<style lang="stylus">
-@require "../../assets/_base"
+<style lang="stylus" scoped>
+ul
+	margin-left 1rem
 </style>

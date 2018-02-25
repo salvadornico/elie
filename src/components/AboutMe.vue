@@ -7,25 +7,20 @@ section#about-me.section.columns.is-centered
 		.level
 			p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum molestias dolorum ipsum voluptatem, officia temporibus animi qui quam consequatur. Deserunt enim, recusandae suscipit distinctio sed nemo? Eligendi cumque provident ullam.
 		.level.columns.is-centered#contact
-			.column.buttons
-				template(v-for="link in links")
-					a.button(:href="link.url", target="_blank")
-						b-icon(pack="fab", :icon="link.icon", size="is-small")
+			SocialButtons.column
 </template>
 
 <script lang="ts">
 import Vue from "vue"
 import { Component } from "vue-property-decorator"
+import SocialButtons from "./shared/SocialButtons.vue"
 
-@Component
-export default class AboutMe extends Vue {
-	links = [
-		{url: "https://www.instagram.com/eliediccion", icon: 'instagram'},
-		{url: "https://www.instagram.com/eliediccion", icon: 'pinterest'},
-		{url: "https://twitter.com/eliediccion", icon: 'twitter'},
-		{url: "https://www.facebook.com/angelique.diccion", icon: 'facebook'},
-	]
-}
+@Component({
+	components: {
+		SocialButtons,
+	}
+})
+export default class AboutMe extends Vue {}
 </script>
 
 <style lang="stylus" scoped>

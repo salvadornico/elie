@@ -65,6 +65,18 @@ export default class BlogPost extends Vue {
 	.post-content
 		text-align left
 
+		p, ul
+			margin-bottom 1rem
+
+		ul
+			margin-left 1.5rem
+			li
+				line-height 2rem
+
 		img
 			width 100%
+
+		code
+			color textColor
+			line-height 2.5rem
 </style>
