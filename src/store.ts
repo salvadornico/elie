@@ -9,12 +9,12 @@ export default new Vuex.Store({
 	state: {
 		isLoading: false,
 		posts: [],
-		post: {},
+		currentPost: {},
 	},
 	getters: {
 		isLoading: state => state.isLoading,
 		posts: state => state.posts,
-		post: state => state.post,
+		post: state => state.currentPost,
 	},
 	mutations: {
 		START_LOADING(state) {
@@ -27,7 +27,7 @@ export default new Vuex.Store({
 			state.posts = posts
 		},
 		SET_CURRENT_POST(state, post) {
-			state.post = post
+			state.currentPost = post
 		},
 	},
 	actions: {

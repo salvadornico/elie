@@ -34,12 +34,12 @@ import { formatDate } from "@/utils/misc"
 	methods: { ...mapActions(["getSinglePost"]) },
 })
 export default class BlogPost extends Vue {
-	@Action getSinglePost: (slug: string) => void
-	@Getter post: any
+	@Action("getSinglePost") getPost: (slug: string) => void
+	@Getter("currentPost") post: any
 	@Getter isLoading: boolean
 
 	async created() {
-		this.getSinglePost(this.formattedSlug)
+		this.getPost(this.formattedSlug)
 	}
 
 	get formattedSlug(): string {
