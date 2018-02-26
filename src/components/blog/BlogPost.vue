@@ -18,6 +18,7 @@ import Vue from "vue"
 import { Component } from "vue-property-decorator"
 import VueMarkdown from "vue-markdown"
 import { mapActions, mapGetters } from "vuex"
+import { Action, Getter } from "vuex-class"
 import { formatDate } from "@/utils/misc"
 
 @Component({
@@ -33,15 +34,19 @@ import { formatDate } from "@/utils/misc"
 	methods: { ...mapActions(["getSinglePost"]) },
 })
 export default class BlogPost extends Vue {
+	@Action getSinglePost: (slug: string) => void
+	@Getter post: any
+	@Getter isLoading: boolean
+
 	async created() {
 		this.getSinglePost(this.formattedSlug)
 	}
 
-	get formattedSlug() {
+	get formattedSlug(): string {
 		return `"${this.$route.params.slug}"`
 	}
 
-	get formattedDate() {
+	get formattedDate(): string {
 		return formatDate(this.post.createdAt)
 	}
 }

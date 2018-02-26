@@ -13,12 +13,13 @@
 import Vue from "vue"
 import { Component } from "vue-property-decorator"
 import { mapActions, mapGetters } from "vuex"
+import { Action, Getter } from "vuex-class"
 import BlogPostPanelLink from "./BlogPostPanelLink.vue"
 
 @Component({
 	metaInfo() {
 		return {
-			title: "Blog"
+			title: "Blog",
 		}
 	},
 	components: {
@@ -28,6 +29,10 @@ import BlogPostPanelLink from "./BlogPostPanelLink.vue"
 	methods: { ...mapActions(["getPosts"]) },
 })
 export default class BlogListing extends Vue {
+	@Action getPosts: () => void
+	@Getter posts: any[]
+	@Getter isLoading: boolean
+
 	async created() {
 		this.getPosts()
 	}

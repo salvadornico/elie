@@ -14,8 +14,8 @@ import { Component, Prop } from "vue-property-decorator"
 export default class FeaturedPosts extends Vue {
 	@Prop() posts: any[]
 
-	postLink(post) {
-		return { name: "blog-post", params: { slug: post.slug }}
+	postLink(post: any) {
+		return { name: "blog-post", params: { slug: post.slug } }
 	}
 }
 </script>

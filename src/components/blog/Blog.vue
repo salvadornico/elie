@@ -22,6 +22,7 @@
 import Vue from "vue"
 import { Component } from "vue-property-decorator"
 import { mapActions, mapGetters } from "vuex"
+import { Action, Getter } from "vuex-class"
 import BlogPostPanelLink from "./BlogPostPanelLink.vue"
 import SocialButtons from "../shared/SocialButtons.vue"
 import FeaturedPosts from "./FeaturedPosts.vue"
@@ -29,7 +30,7 @@ import FeaturedPosts from "./FeaturedPosts.vue"
 @Component({
 	metaInfo() {
 		return {
-			title: "Blog"
+			title: "Blog",
 		}
 	},
 	components: {
@@ -41,12 +42,16 @@ import FeaturedPosts from "./FeaturedPosts.vue"
 	methods: { ...mapActions(["getPosts"]) },
 })
 export default class Blog extends Vue {
+	@Action getPosts: () => void
+	@Getter posts: any
+	@Getter isLoading: boolean
+
 	async created() {
 		this.getPosts()
 	}
 
 	get featuredPosts() {
-		return this.posts.filter(post => post.featured)
+		return this.posts.filter((post: any) => post.featured)
 	}
 }
 </script>
