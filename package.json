@@ -1,21 +1,30 @@
 {
 	"name": "elie",
 	"version": "0.1.0",
-	"license": "MIT",
 	"private": true,
 	"scripts": {
 		"serve": "vue-cli-service serve",
-		"build": "vue-cli-service build"
+		"build": "vue-cli-service build",
+		"lint": "vue-cli-service lint"
 	},
 	"dependencies": {
+		"@types/graphql": "^0.12.4",
+		"apollo-cache-inmemory": "^1.1.9",
+		"apollo-client": "^2.2.5",
+		"apollo-link-http": "^1.5.1",
 		"buefy": "^0.6.3",
+		"graphql": "^0.13.1",
+		"graphql-tag": "^2.8.0",
+		"moment": "^2.20.1",
 		"vue": "^2.5.13",
 		"vue-class-component": "^6.0.0",
+		"vue-markdown": "^2.2.4",
 		"vue-meta": "^1.4.3",
 		"vue-property-decorator": "^6.0.0",
 		"vue-router": "^3.0.1",
 		"vue-scrollto": "^2.8.0",
-		"vuex": "^3.0.1"
+		"vuex": "^3.0.1",
+		"vuex-class": "^0.3.0"
 	},
 	"devDependencies": {
 		"@vue/cli-plugin-babel": "^3.0.0-beta.1",
@@ -39,5 +48,6 @@
 		"> 1%",
 		"last 2 versions",
 		"not ie <= 8"
-	]
+	],
+	"license": "MIT"
 }

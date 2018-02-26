@@ -1,21 +1,12 @@
 <template lang="pug">
-#blog
-	nav.navbar.is-primary(role="navigation")
-		.navbar-brand
-			router-link.navbar-item(to="/")
-				h1.title Elie's Blog
-
-	.container
-		.columns.is-desktop
-			.column.is-three-fourths
-				router-view
-
-			.column.is-one-quarter
-				section.section
-					.level.columns.is-centered
-						SocialButtons.column
-					.level
-						FeaturedPosts(:posts="featuredPosts")
+.blog-listing
+	template(v-for="post in posts", v-if="posts.length > 0")
+		BlogPostPanelLink(:post="post")
+	section.section(v-if="noPosts")
+		b-message(title="Error", type="is-warning", :active.sync="noPosts")
+			p No posts found, please try refreshing this page.
+		.box
+			p No posts found.
 </template>
 
 <script lang="ts">
@@ -24,8 +15,6 @@ import { Component } from "vue-property-decorator"
 import { mapActions, mapGetters } from "vuex"
 import { Action, Getter } from "vuex-class"
 import BlogPostPanelLink from "./BlogPostPanelLink.vue"
-import SocialButtons from "../shared/SocialButtons.vue"
-import FeaturedPosts from "./FeaturedPosts.vue"
 
 @Component({
 	metaInfo() {
@@ -35,23 +24,21 @@ import FeaturedPosts from "./FeaturedPosts.vue"
 	},
 	components: {
 		BlogPostPanelLink,
-		SocialButtons,
-		FeaturedPosts,
 	},
 	computed: { ...mapGetters(["posts", "isLoading"]) },
 	methods: { ...mapActions(["getPosts"]) },
 })
-export default class Blog extends Vue {
+export default class BlogListing extends Vue {
 	@Action getPosts: () => void
-	@Getter posts: any
+	@Getter posts: any[]
 	@Getter isLoading: boolean
 
 	async created() {
 		this.getPosts()
 	}
 
-	get featuredPosts() {
-		return this.posts.filter((post: any) => post.featured)
+	get noPosts() {
+		return !this.isLoading && this.posts.length === 0
 	}
 }
 </script>

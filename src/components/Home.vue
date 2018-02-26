@@ -19,10 +19,10 @@ import Hero from "@/components/Hero.vue"
 		Hero,
 	},
 	metaInfo() {
-       return {
-          title: "Name of Blog here"
-      }
-   }
+		return {
+			title: "Name of Blog here"
+		}
+	}
 })
 export default class Home extends Vue {}
 </script>
@@ -31,9 +31,6 @@ export default class Home extends Vue {}
 @require "../assets/_base"
 
 #home
-	background bgColor
-	color textColor
-
 	section.section	*
 		text-align center
 </style>

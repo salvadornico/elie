@@ -1,4 +1,6 @@
 bgColor = #ffffff
+primaryColor = #f7eee5
+highlightColor = saturate(primaryColor, 500%)
 accentColor = #f0f6f6
 textColor = #262626
 MobileOnly = "(max-width: 769px)"
@@ -6,6 +8,8 @@ TabletUp = "(min-width: 769px)"
 TabletDown = "(max-width: 1024px)"
 TabletOnly = "(min-width: 769px) and (max-width: 1024px)"
 DesktopOnly = "(min-width: 1024px)"
+
+@import url("https://fonts.googleapis.com/css?family=Inconsolata|Sumana|Open+Sans+Condensed:300")
 
 center(axis, position)
 	position position
@@ -25,3 +29,23 @@ center(axis, position)
 	content ""
 	display block
 	clear both
+
+body
+	background bgColor
+	color textColor
+
+	*
+		font-family "Inconsolata"
+
+	.title, .main-link
+		font-family "Open Sans Condensed"
+		letter-spacing 2px
+
+	.main-link
+		font-weight bold
+
+	.post-content *
+		font-family "Sumana"
+
+	ul
+		list-style-type disc
