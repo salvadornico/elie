@@ -1,11 +1,11 @@
 {
 	"name": "elie",
 	"version": "0.1.0",
-	"license": "MIT",
 	"private": true,
 	"scripts": {
 		"serve": "vue-cli-service serve",
-		"build": "vue-cli-service build"
+		"build": "vue-cli-service build",
+		"lint": "vue-cli-service lint"
 	},
 	"dependencies": {
 		"@types/graphql": "^0.12.4",
@@ -43,9 +43,6 @@
 		"typescript": "^2.7.2",
 		"vue-template-compiler": "^2.5.13"
 	},
-	"browserslist": [
-		"> 1%",
-		"last 2 versions",
-		"not ie <= 8"
-	]
+	"browserslist": ["> 1%", "last 2 versions", "not ie <= 8"],
+	"license": "MIT"
 }

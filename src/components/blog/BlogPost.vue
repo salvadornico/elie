@@ -23,7 +23,7 @@ import { formatDate } from "@/utils/misc"
 @Component({
 	metaInfo() {
 		return {
-			title: this.post.title
+			title: this.post.title,
 		}
 	},
 	components: {
@@ -70,6 +70,7 @@ export default class BlogPost extends Vue {
 
 		ul
 			margin-left 1.5rem
+
 			li
 				line-height 2rem
 
