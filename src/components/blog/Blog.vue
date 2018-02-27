@@ -26,6 +26,7 @@ import { Action, Getter } from "vuex-class"
 import BlogPostPanelLink from "./BlogPostPanelLink.vue"
 import SocialButtons from "../shared/SocialButtons.vue"
 import FeaturedPosts from "./FeaturedPosts.vue"
+import { Post } from "@/models/post.model"
 
 @Component({
 	metaInfo() {
@@ -43,15 +44,15 @@ import FeaturedPosts from "./FeaturedPosts.vue"
 })
 export default class Blog extends Vue {
 	@Action getPosts: () => void
-	@Getter posts: any
+	@Getter posts: Post[]
 	@Getter isLoading: boolean
 
 	async created() {
 		this.getPosts()
 	}
 
-	get featuredPosts() {
-		return this.posts.filter((post: any) => post.featured)
+	get featuredPosts(): Post[] {
+		return this.posts.filter((post: Post) => post.featured)
 	}
 }
 </script>

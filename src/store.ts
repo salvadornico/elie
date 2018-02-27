@@ -14,7 +14,7 @@ export default new Vuex.Store({
 	getters: {
 		isLoading: state => state.isLoading,
 		posts: state => state.posts,
-		post: state => state.currentPost,
+		currentPost: state => state.currentPost,
 	},
 	mutations: {
 		START_LOADING(state) {
@@ -39,7 +39,7 @@ export default new Vuex.Store({
 					context.commit("SET_POSTS", (result.data as any).allPosts)
 				})
 				.catch(err => {
-					console.log(err)
+					console.error(err)
 				})
 
 			context.commit("STOP_LOADING")
@@ -55,7 +55,7 @@ export default new Vuex.Store({
 					)
 				})
 				.catch(err => {
-					console.log(err)
+					console.error(err)
 				})
 
 			context.commit("STOP_LOADING")

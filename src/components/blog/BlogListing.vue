@@ -2,8 +2,8 @@
 .blog-listing
 	template(v-for="post in posts", v-if="posts.length > 0")
 		BlogPostPanelLink(:post="post")
-	section.section(v-if="noPosts")
-		b-message(title="Error", type="is-warning", :active.sync="noPosts")
+	section.section(v-if="hasNoPosts")
+		b-message(title="Error", type="is-warning", :active.sync="hasNoPosts")
 			p No posts found, please try refreshing this page.
 		.box
 			p No posts found.
@@ -15,6 +15,7 @@ import { Component } from "vue-property-decorator"
 import { mapActions, mapGetters } from "vuex"
 import { Action, Getter } from "vuex-class"
 import BlogPostPanelLink from "./BlogPostPanelLink.vue"
+import { Post } from "@/models/post.model"
 
 @Component({
 	metaInfo() {
@@ -30,14 +31,14 @@ import BlogPostPanelLink from "./BlogPostPanelLink.vue"
 })
 export default class BlogListing extends Vue {
 	@Action getPosts: () => void
-	@Getter posts: any[]
+	@Getter posts: Post[]
 	@Getter isLoading: boolean
 
 	async created() {
 		this.getPosts()
 	}
 
-	get noPosts() {
+	get hasNoPosts(): boolean {
 		return !this.isLoading && this.posts.length === 0
 	}
 }

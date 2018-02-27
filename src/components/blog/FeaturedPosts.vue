@@ -9,12 +9,13 @@
 <script lang="ts">
 import Vue from "vue"
 import { Component, Prop } from "vue-property-decorator"
+import { Post } from "@/models/post.model"
 
 @Component
 export default class FeaturedPosts extends Vue {
-	@Prop() posts: any[]
+	@Prop() posts: Post[]
 
-	postLink(post: any) {
+	postLink(post: Post): object {
 		return { name: "blog-post", params: { slug: post.slug } }
 	}
 }

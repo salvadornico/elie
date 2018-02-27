@@ -16,6 +16,7 @@
 <script lang="ts">
 import Vue from "vue"
 import { Component } from "vue-property-decorator"
+import { Post } from "@/models/post.model"
 import VueMarkdown from "vue-markdown"
 import { mapActions, mapGetters } from "vuex"
 import { Action, Getter } from "vuex-class"
@@ -30,20 +31,16 @@ import { formatDate } from "@/utils/misc"
 	components: {
 		VueMarkdown,
 	},
-	computed: { ...mapGetters(["post", "isLoading"]) },
+	computed: { ...mapGetters(["currentPost", "isLoading"]) },
 	methods: { ...mapActions(["getSinglePost"]) },
 })
 export default class BlogPost extends Vue {
 	@Action("getSinglePost") getPost: (slug: string) => void
-	@Getter("currentPost") post: any
+	@Getter("currentPost") post: Post
 	@Getter isLoading: boolean
 
 	async created() {
-		this.getPost(this.formattedSlug)
-	}
-
-	get formattedSlug(): string {
-		return `"${this.$route.params.slug}"`
+		this.getPost(`"${this.$route.params.slug}"`)
 	}
 
 	get formattedDate(): string {

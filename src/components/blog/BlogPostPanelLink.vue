@@ -13,17 +13,18 @@ section.section.blog-post-link
 import Vue from "vue"
 import { Component, Prop } from "vue-property-decorator"
 import { formatDate } from "@/utils/misc"
+import { Post } from "@/models/post.model"
 
 @Component
 export default class BlogPostPanelLink extends Vue {
-	@Prop() post: any
+	@Prop() post: Post
 
 	get formattedDate() {
 		return formatDate(this.post.createdAt)
 	}
 
-	get postLink() {
-		return { name: "blog-post", params: { slug: this.post.slug }}
+	get postLink(): object {
+		return { name: "blog-post", params: { slug: this.post.slug } }
 	}
 }
 </script>
