@@ -1,8 +1,8 @@
-import Vue from "vue"
-import Vuex from "vuex"
-import apolloClient from "./apollo/index"
+import apolloClient from "@/apollo/index"
 import { Queries } from "@/apollo/queries"
 import { Post } from "@/models/post.model"
+import Vue from "vue"
+import Vuex from "vuex"
 
 Vue.use(Vuex)
 

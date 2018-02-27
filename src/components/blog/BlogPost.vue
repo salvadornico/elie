@@ -14,13 +14,13 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue"
-import { Component } from "vue-property-decorator"
 import { Post } from "@/models/post.model"
+import { formatDate } from "@/utils/misc"
+import Vue from "vue"
 import VueMarkdown from "vue-markdown"
+import { Component } from "vue-property-decorator"
 import { mapActions, mapGetters } from "vuex"
 import { Action, Getter } from "vuex-class"
-import { formatDate } from "@/utils/misc"
 
 @Component({
 	metaInfo() {

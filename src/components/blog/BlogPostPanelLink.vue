@@ -10,10 +10,10 @@ section.section.blog-post-link
 </template>
 
 <script lang="ts">
+import { Post } from "@/models/post.model"
+import { formatDate } from "@/utils/misc"
 import Vue from "vue"
 import { Component, Prop } from "vue-property-decorator"
-import { formatDate } from "@/utils/misc"
-import { Post } from "@/models/post.model"
 
 @Component
 export default class BlogPostPanelLink extends Vue {

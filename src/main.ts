@@ -1,10 +1,10 @@
+import Buefy from "buefy"
 import Vue from "vue"
+import VueMarkdown from "vue-markdown"
+import VueScrollTo from "vue-scrollto"
 import App from "./App.vue"
 import router from "./router"
 import store from "./store"
-import Buefy from "buefy"
-import VueScrollTo from "vue-scrollto"
-import VueMarkdown from "vue-markdown"
 
 Vue.use(Buefy, {
 	defaultIconPack: "fas",

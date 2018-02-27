@@ -1,10 +1,10 @@
-import Vue from "vue"
-import Router from "vue-router"
-import Meta from "vue-meta"
-import Home from "@/components/Home.vue"
 import Blog from "@/components/blog/Blog.vue"
 import BlogListing from "@/components/blog/BlogListing.vue"
 import BlogPost from "@/components/blog/BlogPost.vue"
+import Home from "@/components/Home.vue"
+import Vue from "vue"
+import Meta from "vue-meta"
+import Router from "vue-router"
 
 Vue.use(Router)
 Vue.use(Meta)

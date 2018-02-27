@@ -7,9 +7,9 @@
 </template>
 
 <script lang="ts">
+import { Post } from "@/models/post.model"
 import Vue from "vue"
 import { Component, Prop } from "vue-property-decorator"
-import { Post } from "@/models/post.model"
 
 @Component
 export default class FeaturedPosts extends Vue {

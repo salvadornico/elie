@@ -19,14 +19,14 @@
 </template>
 
 <script lang="ts">
+import { Post } from "@/models/post.model"
 import Vue from "vue"
 import { Component } from "vue-property-decorator"
 import { mapActions, mapGetters } from "vuex"
 import { Action, Getter } from "vuex-class"
-import BlogPostPanelLink from "./BlogPostPanelLink.vue"
 import SocialButtons from "../shared/SocialButtons.vue"
+import BlogPostPanelLink from "./BlogPostPanelLink.vue"
 import FeaturedPosts from "./FeaturedPosts.vue"
-import { Post } from "@/models/post.model"
 
 @Component({
 	metaInfo() {

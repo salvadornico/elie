@@ -6,11 +6,11 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue"
-import { Component } from "vue-property-decorator"
 import AboutMe from "@/components/AboutMe.vue"
 import Gallery from "@/components/Gallery.vue"
 import Hero from "@/components/Hero.vue"
+import Vue from "vue"
+import { Component } from "vue-property-decorator"
 
 @Component({
 	components: {
