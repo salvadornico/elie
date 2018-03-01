@@ -1,4 +1,6 @@
 import { Asset } from "@/models/asset.model"
+import { Category } from "@/models/category.model"
+import { Tag } from "@/models/tag.model"
 
 export class Post {
 	id: string
@@ -7,7 +9,8 @@ export class Post {
 	featured: boolean
 	content: string
 	coverImage: Asset
-	tags: string[]
+	category: Category
+	tags: Tag[]
 	createdAt: Date
 	updatedAt: Date
 }
