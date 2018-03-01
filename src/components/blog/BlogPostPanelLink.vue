@@ -1,6 +1,7 @@
 <template lang="pug">
 section.section.blog-post-link
-	h1.title {{ post.title }}
+	router-link.title-link(:to="postLink")
+		h1.title {{ post.title }}
 	h2.subtitle {{ formattedDate }}
 	figure.image.is-2by1(v-if="post.coverImage")
 		img(:src="post.coverImage.url", :alt="post.title")
@@ -36,8 +37,11 @@ export default class BlogPostPanelLink extends Vue {
 	border-bottom 1px solid textColor
 	text-align center
 
-	h1.title
+	.title-link
 		margin-bottom 2rem
+
+		&:hover
+			text-decoration underline
 
 	figure
 		margin-bottom 1rem
