@@ -19,7 +19,7 @@ const formatOptions = (options: {}): string => {
 export namespace Queries {
 	export const getPosts = (options: {}) => gql`
 		{
-			allPosts(orderBy: dateAndTime_ASC${formatOptions(options)}) {
+			allPosts(orderBy: createdAt_ASC${formatOptions(options)}) {
 				slug
 				title
 				createdAt
