@@ -6,6 +6,26 @@ import Vuex from "vuex"
 
 Vue.use(Vuex)
 
+const fetchFromCms = async (
+	context: any,
+	query: any,
+	mutationName: string,
+	dataModel: string
+) => {
+	context.commit("START_LOADING")
+
+	await apolloClient
+		.query({ query })
+		.then(result => {
+			context.commit(mutationName, (result.data as any)[dataModel])
+		})
+		.catch(error => {
+			console.error(error)
+		})
+
+	context.commit("STOP_LOADING")
+}
+
 export default new Vuex.Store({
 	state: {
 		isLoading: false,
@@ -50,23 +70,3 @@ export default new Vuex.Store({
 		},
 	},
 })
-
-const fetchFromCms = async (
-	context: any,
-	query: any,
-	mutationName: string,
-	dataModel: string
-) => {
-	context.commit("START_LOADING")
-
-	await apolloClient
-		.query({ query })
-		.then(result => {
-			context.commit(mutationName, (result.data as any)[dataModel])
-		})
-		.catch(error => {
-			console.error(error)
-		})
-
-	context.commit("STOP_LOADING")
-}
