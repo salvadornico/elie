@@ -24,6 +24,7 @@ export namespace Queries {
 				title
 				createdAt
 				featured
+				category
 				coverImage {
 					url
 				}
@@ -36,11 +37,16 @@ export namespace Queries {
 			Post(slug: ${slug}) {
 				title
 				createdAt
-				content
+				category
+				tags {
+					name
+					slug
+				}
 				coverImage {
 					url
 					caption
 				}
+				content
 			}
 		}
 	`
