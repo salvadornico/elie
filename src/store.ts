@@ -33,33 +33,40 @@ export default new Vuex.Store({
 	},
 	actions: {
 		async getPosts(context, payload: object = {}) {
-			context.commit("START_LOADING")
-			await apolloClient
-				.query({ query: Queries.getPosts(payload) })
-				.then(result => {
-					context.commit("SET_POSTS", (result.data as any).allPosts)
-				})
-				.catch(err => {
-					console.error(err)
-				})
-
-			context.commit("STOP_LOADING")
+			await fetchFromCms(
+				context,
+				Queries.getPosts(payload),
+				"SET_POSTS",
+				"allPosts"
+			)
 		},
 		async getSinglePost(context, payload: string) {
-			context.commit("START_LOADING")
-			await apolloClient
-				.query({ query: Queries.getPost(payload) })
-				.then(result => {
-					context.commit(
-						"SET_CURRENT_POST",
-						(result.data as any).Post
-					)
-				})
-				.catch(err => {
-					console.error(err)
-				})
-
-			context.commit("STOP_LOADING")
+			await fetchFromCms(
+				context,
+				Queries.getPost(payload),
+				"SET_CURRENT_POST",
+				"Post"
+			)
 		},
 	},
 })
+
+const fetchFromCms = async (
+	context: any,
+	query: any,
+	mutationName: string,
+	dataModel: string
+) => {
+	context.commit("START_LOADING")
+
+	await apolloClient
+		.query({ query })
+		.then(result => {
+			context.commit(mutationName, (result.data as any)[dataModel])
+		})
+		.catch(error => {
+			console.error(error)
+		})
+
+	context.commit("STOP_LOADING")
+}
