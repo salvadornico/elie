@@ -11,7 +11,7 @@
 		"apollo-cache-inmemory": "^1.1.9",
 		"apollo-client": "^2.2.5",
 		"apollo-link-http": "^1.5.1",
-		"buefy": "^0.6.3",
+		"buefy": "^0.7.2",
 		"graphql": "^0.13.1",
 		"graphql-tag": "^2.8.0",
 		"moment": "^2.20.1",
