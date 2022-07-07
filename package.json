@@ -14,7 +14,7 @@
 		"buefy": "^0.6.3",
 		"graphql": "^0.13.1",
 		"graphql-tag": "^2.8.0",
-		"moment": "^2.20.1",
+		"moment": "^2.29.4",
 		"vue": "^2.5.13",
 		"vue-class-component": "^6.0.0",
 		"vue-markdown": "^2.2.4",
